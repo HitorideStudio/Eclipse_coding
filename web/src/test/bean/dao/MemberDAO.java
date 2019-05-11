@@ -1,4 +1,5 @@
 package test.bean.dao;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -31,7 +32,7 @@ public class MemberDAO {
 			conn = DriverManager.getConnection(url,user,pass);*/
 			
 			Context ctx = new InitialContext();//Context.xml¡§∫∏»πµÊ
-			Context env = (Context)ctx.lookup("java:comp/env");
+			Context env = (Context)ctx.lookup("java:/comp/env");
 			DataSource ds = (DataSource)env.lookup("jdbc/xe");
 			conn = ds.getConnection();
 			
@@ -46,7 +47,7 @@ public class MemberDAO {
 		boolean result = false;
 		try {
 			conn = getConnection();
-			String sql = "select * from test2 where id = ? and pw =?";
+			String sql = "select * from test2 where id=? and pw=?";
 		    pstmt = conn.prepareStatement(sql);
 		    pstmt.setString(1, id);
 		    pstmt.setString(2, pw);
