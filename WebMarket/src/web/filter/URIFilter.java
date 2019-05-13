@@ -19,7 +19,7 @@ public class URIFilter implements Filter{
 	public void init(FilterConfig filterConfig) throws ServletException {
 		try {
 			writer = 
-			new PrintWriter(new FileWriter("d://dropbox//log//market.log"),true);
+			new PrintWriter(new FileWriter("D:\\app\\log"),true);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
