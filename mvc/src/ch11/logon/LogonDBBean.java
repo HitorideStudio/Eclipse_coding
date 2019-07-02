@@ -184,7 +184,7 @@
 			conn = getConnection();
 
             pstmt = conn.prepareStatement(
-            	"select passwd from MEMBER where id = ?");
+            	"select passwd from MEMBER where id=?");
             pstmt.setString(1, id);
             rs = pstmt.executeQuery();
             

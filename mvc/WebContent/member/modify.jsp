@@ -2,8 +2,8 @@
 
   <body>
     <p>
-    <a href="modifyForm.jsp">Á¤º¸¼öÁ¤</a>
-    <a href="deleteForm.jsp">Å»Åð</a>
+    <a href="modifyForm.do">Á¤º¸¼öÁ¤</a>
+    <a href="deleteForm.do">Å»Åð</a>
     </p>
   </body>
 </html>

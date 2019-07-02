@@ -8,17 +8,13 @@
 </head>
 
 <%
-    String id = (String)session.getAttribute("memId");
-	String passwd  = request.getParameter("passwd");
-	
-	LogonDBBean manager = LogonDBBean.getInstance();
-    int check = manager.deleteMember(id,passwd);
-	
+   
+    int check = (Integer)request.getAttribute("check");
 	if(check==1){
 		session.invalidate();
 %>
 <body bgcolor="<%=bodyback_c%>">
-<form method="post" action="main.jsp" name="userinput" >
+<form method="post" action="main.do" name="userinput" >
 <table width="270" border="0" cellspacing="0" cellpadding="5" align="center">
   <tr bgcolor="<%=title_c%>"> 
     <td height="39" align="center">
@@ -27,7 +23,7 @@
   <tr bgcolor="<%=value_c%>">
     <td align="center"> 
       <p>흑흑.... 서운합니다. 안녕히 가세요.</p>
-      <meta http-equiv="Refresh" content="5;url=main.jsp" >
+      <meta http-equiv="Refresh" content="5;url=main.do" >
     </td>
   </tr>
   <tr bgcolor="<%=value_c%>">

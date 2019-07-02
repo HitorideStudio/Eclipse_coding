@@ -21,7 +21,7 @@
    </script>
 </head>
 <BODY onload="begin()" bgcolor="<%=bodyback_c%>">
-<form name="myform" action="deletePro.jsp" method="post" onSubmit="return checkIt()">
+<form name="myform" action="deletePro.do" method="post" onSubmit="return checkIt()">
 <TABLE cellSpacing=1 cellPadding=1 width="260" border=1 align="center" >
   
   <TR height="30">
@@ -35,7 +35,7 @@
   <TR height="30">
     <TD colspan="2" align="middle" bgcolor="<%=value_c%>" >
       <INPUT type=submit value="È¸¿øÅ»Åð"> 
-      <input type="button" value="Ãë  ¼Ò" onclick="javascript:window.location='main.jsp'"></TD></TR>
+      <input type="button" value="Ãë  ¼Ò" onclick="javascript:window.location='main.do'"></TD></TR>
 </TABLE>
 </form>
 </BODY>

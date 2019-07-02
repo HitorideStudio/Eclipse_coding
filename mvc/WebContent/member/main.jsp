@@ -39,7 +39,7 @@ function focusIt()
        &nbsp;
        </td>
    
-       <form name="inform" method="post" action="loginPro.jsp"  onSubmit="return checkIt();">
+       <form name="inform" method="post" action="loginPro.do"  onSubmit="return checkIt();">
 
         <td bgcolor="<%=title_c%>"  width="100" align="right">아이디</td>
         <td width="100" bgcolor="<%=value_c%>">
@@ -54,7 +54,7 @@ function focusIt()
        <tr>
           <td colspan="3" bgcolor="<%=title_c%>"   align="center">
             <input type="submit" name="Submit" value="로그인">
-            <input type="button"  value="회원가입" onclick="javascript:window.location='inputForm.jsp'">
+            <input type="button"  value="회원가입" onclick="javascript:window.location='inputForm.do'">
           </td></form></tr></table>
           
           
@@ -70,9 +70,9 @@ function focusIt()
            <td rowspan="3" bgcolor="<%=value_c%>" align="center">
              <%=session.getAttribute("memId")%>님이 <br>
              방문하셨습니다
-             <form  method="post" action="logout.jsp">  
+             <form  method="post" action="logout.do">  
              <input type="submit"  value="로그아웃">
-             <input type="button" value="회원정보변경" onclick="javascript:window.location='modify.jsp'">
+             <input type="button" value="회원정보변경" onclick="javascript:window.location='modify.do'">
              </form>
          </td>
         </tr>

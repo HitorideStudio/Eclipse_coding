@@ -48,11 +48,11 @@ public class MemberController extends HttpServlet {
 		}
 	}
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-			//http://lovalhost:8080/mvc/loginForm.do
+			//http://localhost:8080/mvc/loginForm.do
 			String uri  = request.getRequestURI();// /mvc/loginForm.do
 			Object obj = command.get(uri);// loginFormBean
 			SuperBean sb = null;
-			String view = "/mvc.main.jsp";
+			String view = "/member/main.jsp";
 			if(obj instanceof SuperBean) {
 				sb = (SuperBean)obj;
 				view = sb.actionBean(request, response);

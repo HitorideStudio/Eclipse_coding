@@ -1,50 +1,50 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=euc-kr"%>
 <%@ include file="/view/color.jsp"%>
 <html>
 <head>
-<title>íšŒì›ê°€ì…</title>
+<title>È¸¿ø°¡ÀÔ</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
     
     function checkIt() {
         var userinput = eval("document.userinput");
         if(!userinput.id.value) {
-            alert("IDë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+            alert("ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
             return false;
         }
         
         if(!userinput.passwd.value ) {
-            alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+            alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
             return false;
         }
         if(userinput.passwd.value != userinput.passwd2.value)
         {
-            alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ë™ì¼í•˜ê²Œ ì…ë ¥í•˜ì„¸ìš”");
+            alert("ºñ¹Ğ¹øÈ£¸¦ µ¿ÀÏÇÏ°Ô ÀÔ·ÂÇÏ¼¼¿ä");
             return false;
         }
        
         if(!userinput.username.value) {
-            alert("ì‚¬ìš©ì ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
+            alert("»ç¿ëÀÚ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
             return false;
         }
         if(!userinput.jumin1.value  || !userinput.jumin2.value )
         {
-            alert("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+            alert("ÁÖ¹Îµî·Ï¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
             return false;
         }
     }
 
-    // ì•„ì´ë”” ì¤‘ë³µ ì—¬ë¶€ë¥¼ íŒë‹¨
+    // ¾ÆÀÌµğ Áßº¹ ¿©ºÎ¸¦ ÆÇ´Ü
     function openConfirmid(userinput) {
-        // ì•„ì´ë””ë¥¼ ì…ë ¥í–ˆëŠ”ì§€ ê²€ì‚¬
+        // ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇß´ÂÁö °Ë»ç
         if (userinput.id.value == "") {
-            alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+            alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
             return;
         }
-        // urlê³¼ ì‚¬ìš©ì ì…ë ¥ idë¥¼ ì¡°í•©í•©ë‹ˆë‹¤.
-        url = "confirmId.jsp?id="+userinput.id.value ;
+        // url°ú »ç¿ëÀÚ ÀÔ·Â id¸¦ Á¶ÇÕÇÕ´Ï´Ù.
+        url = "confirmId.do?id="+userinput.id.value ;
         
-        // ìƒˆë¡œìš´ ìœˆë„ìš°ë¥¼ ì—½ë‹ˆë‹¤.
+        // »õ·Î¿î À©µµ¿ì¸¦ ¿±´Ï´Ù.
         open(url, "confirm",  "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
     }
 </script>
@@ -52,49 +52,49 @@
 
 <body bgcolor="<%=bodyback_c%>">
 
-<form method="post" action="inputPro.jsp" name="userinput" onSubmit="return checkIt()">
+<form method="post" action="inputPro.do" name="userinput" onSubmit="return checkIt()">
   <table width="600" border="1" cellspacing="0" cellpadding="3" align="center" >
     <tr> 
     <td colspan="2" height="39" align="center" bgcolor="<%=value_c%>" >
-       <font size="+1" ><b>íšŒì›ê°€ì…</b></font></td>
+       <font size="+1" ><b>È¸¿ø°¡ÀÔ</b></font></td>
     </tr>
     <tr> 
-      <td width="200" bgcolor="<%=value_c%>"><b>ì•„ì´ë”” ì…ë ¥</b></td>
+      <td width="200" bgcolor="<%=value_c%>"><b>¾ÆÀÌµğ ÀÔ·Â</b></td>
       <td width="400" bgcolor="<%=value_c%>">&nbsp;</td>
     </tr>  
 
     <tr> 
-      <td width="200"> ì‚¬ìš©ì ID</td>
+      <td width="200"> »ç¿ëÀÚ ID</td>
       <td width="400"> 
         <input type="text" name="id" size="10" maxlength="12">
-        <input type="button" name="confirm_id" value="IDì¤‘ë³µí™•ì¸" 
+        <input type="button" name="confirm_id" value="IDÁßº¹È®ÀÎ" 
         							OnClick="openConfirmid(this.form)">
       </td>
     </tr>
     <tr> 
-      <td width="200"> ë¹„ë°€ë²ˆí˜¸</td>
+      <td width="200"> ºñ¹Ğ¹øÈ£</td>
       <td width="400" > 
         <input type="password" name="passwd" size="15" maxlength="12">
       </td>
     <tr>  
-      <td width="200">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</td>
+      <td width="200">ºñ¹Ğ¹øÈ£ È®ÀÎ</td>
       <td width="400"> 
         <input type="password" name="passwd2" size="15" maxlength="12">
       </td>
     </tr>
     
     <tr> 
-      <td width="200" bgcolor="<%=value_c%>"><b>ê°œì¸ì •ë³´ ì…ë ¥</b></td>
+      <td width="200" bgcolor="<%=value_c%>"><b>°³ÀÎÁ¤º¸ ÀÔ·Â</b></td>
       <td width="400" bgcolor="<%=value_c%>">&nbsp;</td>
     <tr>  
     <tr> 
-      <td width="200">ì‚¬ìš©ì ì´ë¦„</td>
+      <td width="200">»ç¿ëÀÚ ÀÌ¸§</td>
       <td width="400"> 
         <input type="text" name="name" size="15" maxlength="10">
       </td>
     </tr>
     <tr> 
-      <td width="200">ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸</td>
+      <td width="200">ÁÖ¹Îµî·Ï¹øÈ£</td>
       <td width="400"> 
         <input type="text" name="jumin1" size="7" maxlength="6">
         -<input type="text" name="jumin2" size="7" maxlength="7">
@@ -114,9 +114,9 @@
     </tr>
     <tr> 
       <td colspan="2" align="center" bgcolor="<%=value_c%>"> 
-          <input type="submit" name="confirm" value="ë“±   ë¡" >
-          <input type="reset" name="reset" value="ë‹¤ì‹œì…ë ¥">
-          <input type="button" value="ê°€ì…ì•ˆí•¨" onclick="javascript:window.location='main.jsp'">
+          <input type="submit" name="confirm" value="µî   ·Ï" >
+          <input type="reset" name="reset" value="´Ù½ÃÀÔ·Â">
+          <input type="button" value="°¡ÀÔ¾ÈÇÔ" onclick="javascript:window.location='main.do'">
       </td>
     </tr>
   </table>

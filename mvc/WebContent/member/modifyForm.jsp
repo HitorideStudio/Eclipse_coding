@@ -1,12 +1,10 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import = "ch11.logon.*" %>
 <%@ include file="/view/color.jsp"%>
-
 <html>
 <head>
 <title>회원정보수정</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-
 
 <script language="JavaScript">
    <!-- 
@@ -46,7 +44,7 @@
 %>
 
 <body bgcolor="<%=bodyback_c%>">
-<form method="post" action="modifyPro.jsp" name="userinput" onsubmit="return checkIt()">
+<form method="post" action="modifyPro.do" name="userinput" onsubmit="return checkIt()">
 
   <table width="600" border="1" cellspacing="0" cellpadding="3"  align="center">
     <tr > 
@@ -111,7 +109,7 @@
     <tr> 
       <td colspan="2" align="center" bgcolor="<%=value_c%>"> 
        <input type="submit" name="modify" value="수   정" >
-       <input type="button" value="취  소" onclick="javascript:window.location='main.jsp'">      
+       <input type="button" value="취  소" onclick="javascript:window.location='main.do'">      
       </td>
     </tr>
   </table>

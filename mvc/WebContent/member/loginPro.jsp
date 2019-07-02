@@ -8,7 +8,7 @@
 
 	if(check==1){
 		//session.setAttribute("memId",id);
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("/mvc/main.do");
 	}else if(check==0){%>
 	<script> 
 	  alert("비밀번호가 맞지 않습니다.");
