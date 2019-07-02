@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class loginFormBean implements SuperBean{
 	public String actionBean(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
-		return "/0701/loginForm.jsp";
+		return "/member/loginForm.jsp";
 	}
 	
 }

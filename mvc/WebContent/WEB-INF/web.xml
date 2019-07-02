@@ -33,9 +33,13 @@
  	<servlet>
  		<servlet-name>member</servlet-name>
  		<servlet-class>web.mvc.member.MemberController</servlet-class>
+ 		<init-param>
+ 			<param-name>propertiesPath</param-name>
+ 			<param-value>D:\Eclipse_coding\mvc\WebContent\WEB-INF\properties\memeberURI.properties</param-value>
+ 		</init-param>
  	</servlet>
  	<servlet-mapping>
  		<servlet-name>member</servlet-name>
- 		<url-pattern>*.mem</url-pattern>
+ 		<url-pattern>*.do</url-pattern>
  	</servlet-mapping> 	
 </web-app>
