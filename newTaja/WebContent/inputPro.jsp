@@ -8,8 +8,14 @@
 
 <%
 
-	HttDBBean dbPro = HttDBBean.getInstance();
-    dbPro.insertHtt(htt);
+	HttDBBean vo = HttDBBean.getInstance();
+	System.out.println("===============================");
+    vo.insertHtt(htt);
     
     
  %>
+ <script>
+
+	alert("등록완료.");
+</script>
+<META http-equiv=refresh content="0; url=/newTaja/httWeb.jsp">

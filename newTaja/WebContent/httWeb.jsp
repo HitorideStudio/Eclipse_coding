@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import ="htt.HttDBBean"%>
+<%@ page import ="htt.HttDataBean"%>
 <!DOCTYPE html>
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -458,6 +459,7 @@
 			this.timerStopped=true;
 			this.timerSec=0;
 
+			
 			this.setHttp=function(){ 
 
 				/*** 순차 문장선택  ***/ 
@@ -468,10 +470,10 @@
 				//this.exString = this.arrStrs[idx];
 
 				/*** 선택된 문장에서 장절과 내용 구분 추가 ***/
-			 var exStr = this.arrStrs[idx];
-     		 var myArray = exStr.split('|');
-     		 this.exverse = myArray[0];  // 장절
-			 this.exString = myArray[1]; // 내용
+			 	var exStr = this.arrStrs[idx];
+     		 	var myArray = exStr.split('|');
+     		 	this.exverse = myArray[0];  // 장절
+			 	this.exString = myArray[1]; // 내용
 
 				
 				/*** 문장/입력 객체 가져오기***/
@@ -489,18 +491,18 @@
 				objExverse.innerHTML=this.exverse;
 				objInputString.value="";
 				objInputString.focus();
-			      }
+			  }
 			
 			
 				/** 입력하는 ..**/
 			
 			    this.keyUp=function(){
-				var objInputString = this.obj("httpInputString");
+					var objInputString = this.obj("httpInputString");
 				
-				this.chkMiss();
+					this.chkMiss();
 
 				/*** 다른 문장으로 넘김 ***/
-				if(this.exString.length<=objInputString.value.length){
+					if(this.exString.length<=objInputString.value.length){
 					
 					/*** 정확도 계산/출력 ***/
 			/*		this.lengthTotal += this.exString.length;
@@ -521,17 +523,17 @@
 					this.obj("barSpeedCur").style.width=this.speedCur/10+"%";
 					this.obj("barSpeedMax").style.width=this.speedMax/10+"%"; */
 
-					this.setHttp();
-					return false;
+							this.setHttp();
+						return false;
+					}
+					return true;
 				}
-				return true;
-			}
 			 
 			    
 			    
 			this.obj=function(id){
 				return document.getElementById(id);
-			}
+				}
 			
 			
 			this.chkMiss=function(){
@@ -547,10 +549,10 @@
 					else{
 						result+=this.exString.substring(i,i+1);
 						this.lengthCurTrue++;
+						}
 					}
-				}
-				var objExString = this.obj("exString");
-				objExString.innerHTML=result;
+					var objExString = this.obj("exString");
+					objExString.innerHTML=result;
 			}
 			
 			
