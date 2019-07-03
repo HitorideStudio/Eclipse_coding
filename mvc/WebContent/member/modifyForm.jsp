@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
 <%@ page import = "ch11.logon.*" %>
-<%@ include file="/view/color.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/view/color2.jsp"%>
 <html>
 <head>
 <title>회원정보수정</title>
@@ -43,20 +44,20 @@
 	try{
 %>
 
-<body bgcolor="<%=bodyback_c%>">
+<body bgcolor="${bodyback_c}">
 <form method="post" action="modifyPro.do" name="userinput" onsubmit="return checkIt()">
 
   <table width="600" border="1" cellspacing="0" cellpadding="3"  align="center">
     <tr > 
-      <td  colspan="2" height="39" bgcolor="<%=title_c%>" align="center">
+      <td  colspan="2" height="39" bgcolor="${title_c}" align="center">
 	     <font size="+1" ><b>회원 정보수정</b></font></td>
     </tr>
     <tr>
       <td colspan="2" class="normal" align="center">회원의 정보를 수정합니다.</td>
     </tr>
      <tr> 
-      <td width="200" bgcolor="<%=value_c%>"><b>아이디 입력</b></td>
-      <td width="400" bgcolor="<%=value_c%>">&nbsp;</td>
+      <td width="200" bgcolor="${value_c}"><b>아이디 입력</b></td>
+      <td width="400" bgcolor="${value_c}">&nbsp;</td>
     <tr>  
 
     <tr> 
@@ -71,8 +72,8 @@
       </td>
     <tr>  
     <tr> 
-      <td  width="200" bgcolor="<%=value_c%>"><b>개인정보 입력</b></td>
-      <td width="400" bgcolor="<%=value_c%>">&nbsp;</td>
+      <td  width="200" bgcolor="${value_c}"><b>개인정보 입력</b></td>
+      <td width="400" bgcolor="${value_c}">&nbsp;</td>
     <tr>  
     <tr> 
       <td   width="200">사용자 이름</td>
@@ -107,9 +108,9 @@
       </td>
     </tr>      
     <tr> 
-      <td colspan="2" align="center" bgcolor="<%=value_c%>"> 
+      <td colspan="2" align="center" bgcolor="${value_c}"> 
        <input type="submit" name="modify" value="수   정" >
-       <input type="button" value="취  소" onclick="javascript:window.location='main.do'">      
+       <input type="button" value="취  소" onclick="javascript:window.location='/mvc/main.do'">      
       </td>
     </tr>
   </table>

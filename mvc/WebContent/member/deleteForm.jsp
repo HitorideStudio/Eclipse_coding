@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=euc-kr"%>
-<%@ include file="/view/color.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/view/color2.jsp"%>
 <html>
 <head><title>È¸¿øÅ»Åð</title>
 <link href="style.css" rel="stylesheet" type="text/css">
@@ -20,22 +21,22 @@
      -->
    </script>
 </head>
-<BODY onload="begin()" bgcolor="<%=bodyback_c%>">
-<form name="myform" action="deletePro.do" method="post" onSubmit="return checkIt()">
+<BODY onload="begin()" bgcolor="${bodyback_c}">
+<form name="myform" action="/mvc/deletePro.do" method="post" onSubmit="return checkIt()">
 <TABLE cellSpacing=1 cellPadding=1 width="260" border=1 align="center" >
   
   <TR height="30">
-    <TD colspan="2" align="middle" bgcolor="<%=title_c%>">
+    <TD colspan="2" align="middle" bgcolor="${title_c}">
 	  <font size="+1" ><b>È¸¿ø Å»Åð</b></font></TD></TR>
   
   <TR height="30">
-    <TD width="110" bgcolor="<%=value_c%>" align=center>ºñ¹Ð¹øÈ£</TD>
+    <TD width="110" bgcolor="${value_c}" align=center>ºñ¹Ð¹øÈ£</TD>
     <TD width="150" align=center>
       <INPUT type=password name="passwd"  size="15" maxlength="12"></TD></TR>
   <TR height="30">
-    <TD colspan="2" align="middle" bgcolor="<%=value_c%>" >
+    <TD colspan="2" align="middle" bgcolor="${value_c}" >
       <INPUT type=submit value="È¸¿øÅ»Åð"> 
-      <input type="button" value="Ãë  ¼Ò" onclick="javascript:window.location='main.do'"></TD></TR>
+      <input type="button" value="Ãë  ¼Ò" onclick="javascript:window.location='/mvc/main.do'"></TD></TR>
 </TABLE>
 </form>
 </BODY>

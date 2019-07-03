@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=euc-kr"%>
-<%@ include file="/view/color.jsp"%>
+<%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/view/color2.jsp"%>
 <html>
 <head>
 <title>회원가입</title>
@@ -50,17 +51,17 @@
 </script>
 
 
-<body bgcolor="<%=bodyback_c%>">
+<body bgcolor="${bodyback_c}">
 
-<form method="post" action="inputPro.do" name="userinput" onSubmit="return checkIt()">
+<form method="post" action="/mvc/inputPro.do" name="userinput" onSubmit="return checkIt()">
   <table width="600" border="1" cellspacing="0" cellpadding="3" align="center" >
     <tr> 
-    <td colspan="2" height="39" align="center" bgcolor="<%=value_c%>" >
+    <td colspan="2" height="39" align="center" bgcolor="${value_c}" >
        <font size="+1" ><b>회원가입</b></font></td>
     </tr>
     <tr> 
-      <td width="200" bgcolor="<%=value_c%>"><b>아이디 입력</b></td>
-      <td width="400" bgcolor="<%=value_c%>">&nbsp;</td>
+      <td width="200" bgcolor="${value_c}"><b>아이디 입력</b></td>
+      <td width="400" bgcolor="${value_c}">&nbsp;</td>
     </tr>  
 
     <tr> 
@@ -84,8 +85,8 @@
     </tr>
     
     <tr> 
-      <td width="200" bgcolor="<%=value_c%>"><b>개인정보 입력</b></td>
-      <td width="400" bgcolor="<%=value_c%>">&nbsp;</td>
+      <td width="200" bgcolor="${value_c}"><b>개인정보 입력</b></td>
+      <td width="400" bgcolor="${value_c}">&nbsp;</td>
     <tr>  
     <tr> 
       <td width="200">사용자 이름</td>
@@ -113,10 +114,10 @@
       </td>
     </tr>
     <tr> 
-      <td colspan="2" align="center" bgcolor="<%=value_c%>"> 
+      <td colspan="2" align="center" bgcolor="${value_c}"> 
           <input type="submit" name="confirm" value="등   록" >
           <input type="reset" name="reset" value="다시입력">
-          <input type="button" value="가입안함" onclick="javascript:window.location='main.do'">
+          <input type="button" value="가입안함" onclick="javascript:window.location='/mvc/main.do'">
       </td>
     </tr>
   </table>

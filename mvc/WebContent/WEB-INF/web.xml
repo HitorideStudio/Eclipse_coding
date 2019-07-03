@@ -10,6 +10,15 @@
  		<servlet-name>hello</servlet-name>
  		<url-pattern>/hello.git</url-pattern>
  	</servlet-mapping>
+ 	<servlet>
+ 		<servlet-name>test</servlet-name>
+ 		<servlet-class>web.mvc.controller.testController</servlet-class>
+ 	</servlet>
+ 	
+ 	<servlet-mapping>
+ 		<servlet-name>test</servlet-name>
+ 		<url-pattern>/test.do</url-pattern>
+ 	</servlet-mapping>
  	<!--  
  	<servlet>
  		<servlet-name>loginForm</servlet-name>

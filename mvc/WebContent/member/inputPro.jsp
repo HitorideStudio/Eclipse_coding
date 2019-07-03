@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=euc-kr" %>
-<%@ page import = "ch11.logon.LogonDBBean" %>
-<%@ page import = "java.sql.Timestamp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%
-    response.sendRedirect("loginForm.do");
-%>
+
+	<c:redirect url="loginForm.do"/>
