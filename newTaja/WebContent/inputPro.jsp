@@ -18,4 +18,4 @@
 
 	alert("등록완료.");
 </script>
-<META http-equiv=refresh content="0; url=/newTaja/httWeb.jsp">
+<META http-equiv=refresh content="0; url=/newTaja/tajaTest.jsp">

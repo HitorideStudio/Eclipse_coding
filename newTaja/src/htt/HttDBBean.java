@@ -29,7 +29,7 @@ public class HttDBBean {
 		try {
 			conn = getConnection();
 		
-			sql = "insert into bible values(?)";
+			sql = "insert into bible values(bible_seq.nextval,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, htt.getExstring());
 			pstmt.executeUpdate();
@@ -41,6 +41,27 @@ public class HttDBBean {
 			if (conn != null) try { conn.close(); } catch(SQLException ex) {}
 		}
 	}
+	public int getCount() throws Exception {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int x=0;
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select count(*) from bible");
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				x= rs.getInt(1); //0번아니고 1번부터 시작
+			}
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if (rs != null) try { rs.close(); } catch(SQLException ex) {}
+			if (pstmt != null) try { pstmt.close(); } catch(SQLException ex) {}
+			if (conn != null) try { conn.close(); } catch(SQLException ex) {}
+		}
+		return x; 
+	}
 	public List getHtt(int start, int end)throws Exception{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -49,7 +70,7 @@ public class HttDBBean {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(
-					"select * from bible ?,?");
+					"select * from bible order by exnum desc ,?,?");
 			pstmt.setInt(1, start); 
 			pstmt.setInt(2, end);
 			rs = pstmt.executeQuery();

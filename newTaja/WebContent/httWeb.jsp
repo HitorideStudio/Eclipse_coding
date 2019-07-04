@@ -459,7 +459,7 @@
 			this.timerStopped=true;
 			this.timerSec=0;
 
-			
+		//////////////////////////////////////////////////////////	
 			this.setHttp=function(){ 
 
 				/*** 순차 문장선택  ***/ 
@@ -492,7 +492,7 @@
 				objInputString.value="";
 				objInputString.focus();
 			  }
-			
+			/////////////////////////////////////////////////
 			
 				/** 입력하는 ..**/
 			
