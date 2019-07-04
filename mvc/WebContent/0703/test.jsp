@@ -33,7 +33,7 @@
 
 
 
-<%-- 
+
 <c:set var="a" value="korea"/>
 ${a}<br/>
 
@@ -95,7 +95,7 @@ ${ma }
     	<h1>vo = ${vo.id }</h1>
     	<h1>vo = ${vo.age }</h1>
     	<h1>vo = ${vo.name }</h1>
-   --%> 	
+	
     	
     	
     

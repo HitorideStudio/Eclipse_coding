@@ -50,5 +50,24 @@
  	<servlet-mapping>
  		<servlet-name>member</servlet-name>
  		<url-pattern>*.do</url-pattern>
- 	</servlet-mapping> 	
+ 	</servlet-mapping> 
+ 	
+ 		
+ 	<servlet>
+ 		<servlet-name>board</servlet-name>
+ 		<servlet-class>web.mvc.board.BoardController</servlet-class>
+ 		<init-param>
+ 			<param-name>propertiesBoradPath</param-name>
+ 			<param-value>D:\Eclipse_coding\mvc\WebContent\WEB-INF\properties\boardURI.properties</param-value>
+ 		</init-param>
+ 	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>board</servlet-name>
+ 		<url-pattern>*.hit</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	
+ 	
+ 	
+ 	
 </web-app>
