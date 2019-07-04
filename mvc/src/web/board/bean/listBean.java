@@ -15,11 +15,17 @@ public class listBean implements SuperBean {
 
 	public String actionBean(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		int pageSize = 10;
-	       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-	       String pageNum = request.getParameter("pageNum");
-	       if (pageNum == null) {
+		  
+			request.setCharacterEncoding("euc-kr");
+			
+			request.setAttribute("num", 99);
+			request.setAttribute("id", "java");
+			System.out.println("=======");
+			
+			int pageSize = 10;
+	        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	        String pageNum = request.getParameter("pageNum");
+	        if (pageNum == null) {
 	              pageNum = "1";
 	          }
 	       System.out.println(pageNum);
@@ -33,15 +39,15 @@ public class listBean implements SuperBean {
 	          int pageCount = count / pageSize + ( count % pageSize == 0 ? 0 : 1);
 
 	           int startPage = (int)(currentPage/10)*10+1;
-	         int pageBlock=10;
+	           int pageBlock=10;
 	           int endPage = startPage + pageBlock-1;
-	           if (endPage > pageCount) endPage = pageCount;
-	          
+	           if (endPage > pageCount) {endPage = pageCount;}
+	           try {
 	          List articleList = null;
 	      
 	          BoardDBBean dbPro = BoardDBBean.getInstance();
 	          
-	          try {
+	       
 	             count = dbPro.getArticleCount();
 	             if (count > 0) {
 	                 articleList = dbPro.getArticles(startRow, pageSize);
@@ -49,7 +55,7 @@ public class listBean implements SuperBean {
 	             number=count-(currentPage-1)*pageSize;
 	             
 	            System.out.println(count);
-	             
+	             request.setAttribute("pageSize", pageSize);
 	             request.setAttribute("count",count);
 	             request.setAttribute("articleList", articleList);
 	             request.setAttribute("number", number);

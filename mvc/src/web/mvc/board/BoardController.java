@@ -47,7 +47,7 @@ public class BoardController extends HttpServlet {
 		String uri = request.getRequestURI();
 		Object obj = command.get(uri);
 		SuperBean sb = null;
-		String view = "/board/error.jsp";
+		String view = "/board/list.jsp";
 		if(obj instanceof SuperBean) {
 			sb = (SuperBean)obj;
 			view = sb.actionBean(request, response);

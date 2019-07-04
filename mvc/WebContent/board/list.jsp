@@ -6,8 +6,11 @@
 <title>게시판</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+<h1>num =${num}</h1>
+    	<h1>id = ${id}</h1>
+
 <body bgcolor="${bodyback_c}">
-<center><b>글목록(전체 글:${count})</b>
+<center><b>글목록(전체 글:${count})${pageSize }</b>
 <table width="700">
 <tr>
     <td align="right" bgcolor="${value_c}">
