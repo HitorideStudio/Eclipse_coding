@@ -18,9 +18,6 @@ public class listBean implements SuperBean {
 		  
 			request.setCharacterEncoding("euc-kr");
 			
-			request.setAttribute("num", 99);
-			request.setAttribute("id", "java");
-			System.out.println("=======");
 			
 			int pageSize = 10;
 	        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -36,12 +33,11 @@ public class listBean implements SuperBean {
 	          int number=0;
 	          int wid=0; 
 	          
-	          int pageCount = count / pageSize + ( count % pageSize == 0 ? 0 : 1);
-
+	          
 	           int startPage = (int)(currentPage/10)*10+1;
 	           int pageBlock=10;
 	           int endPage = startPage + pageBlock-1;
-	           if (endPage > pageCount) {endPage = pageCount;}
+	    
 	           try {
 	          List articleList = null;
 	      
@@ -50,13 +46,17 @@ public class listBean implements SuperBean {
 	       
 	             count = dbPro.getArticleCount();
 	             if (count > 0) {
-	                 articleList = dbPro.getArticles(startRow, pageSize);
+	                 articleList = dbPro.getArticles(startRow, endRow);
 	             }
+	             int pageCount = count / pageSize + ( count % pageSize == 0 ? 0 : 1);
+	             if (endPage > pageCount) {endPage = pageCount;}
 	             number=count-(currentPage-1)*pageSize;
 	             
 	            System.out.println(count);
 	             request.setAttribute("pageSize", pageSize);
 	             request.setAttribute("count",count);
+	             request.setAttribute("sdf",sdf);
+	             request.setAttribute("wid",wid);
 	             request.setAttribute("articleList", articleList);
 	             request.setAttribute("number", number);
 	             request.setAttribute("currentPage", currentPage);

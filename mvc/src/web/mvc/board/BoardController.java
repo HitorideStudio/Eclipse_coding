@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import web.mvc.bean.SuperBean;
+import web.board.bean.SuperBean;
+
 
 public class BoardController extends HttpServlet {
 	private Map command = new HashMap();
@@ -47,7 +48,7 @@ public class BoardController extends HttpServlet {
 		String uri = request.getRequestURI();
 		Object obj = command.get(uri);
 		SuperBean sb = null;
-		String view = "/board/list.jsp";
+		String view = "list.hit";
 		if(obj instanceof SuperBean) {
 			sb = (SuperBean)obj;
 			view = sb.actionBean(request, response);

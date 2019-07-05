@@ -70,9 +70,7 @@ public class HttDBBean {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(
-					"select * from bible order by exnum desc ,?,?");
-			pstmt.setInt(1, start); 
-			pstmt.setInt(2, end);
+					"select * from bible order by  exnum asc");
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
 				bibletList = new ArrayList(end); 
@@ -90,5 +88,26 @@ public class HttDBBean {
 			if (conn != null) try { conn.close(); } catch(SQLException ex) {}
 		}
 		return bibletList;
+	}
+	public String getValue(int i) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String str=null;
+		
+		try {
+			conn = getConnection();
+			String sql = "select exstring from bible where exnum=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, i);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				str = rs.getString(1);
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return str;
 	}
 }

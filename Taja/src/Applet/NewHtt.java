@@ -22,6 +22,7 @@ public class NewHtt extends java.applet.Applet
    "And a cup of good cheer.",
    "We won't go until we get some.",
    "So bring it out here!",
+   
    "We wish you a Merry Christmas.",
       "And a happy New Year."
    };
